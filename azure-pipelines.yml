@@ -7,11 +7,11 @@ pool:
 steps:
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'  # Ensure this path is correct
+    mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    jdkVersionOption: '1.11'  # Specify the Java version (corrected)
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: true  # This will publish test results
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'  # Ensure correct test result path
-    goals: 'package'  # This will build and run tests
-
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
